@@ -43,27 +43,63 @@ import ReactDOM from "react-dom/client"
 // root.render(parent); 
 // //lets hust create a npm script so that we dont have to write npx parcel index.html again and again
 //create react element
-const heading=React.createElement(
-    "h1",
-    {id:"heading"},
-    "Namaste React Punit sharma"
-);
+// const heading=React.createElement(
+//     "h1",
+//     {id:"heading"},
+//     "Namaste React Punit sharma"
+// );
 //jsx{transpiled before it reaches the js engine}-Parcel-Babel(normal javascript package)
 //jsx -html like or xml like syntax
 //jsx developed by facebook (jsx is not a part of react)//jsx is different and react is different 
 // jsx=>react.createElement=>react element-js object=>html
-const jsxHeading=(<h1 className="head"
- tabIndex="1">
-    Namaste react using jsx
-    </h1>);
-console.log(jsxHeading);
-const root=ReactDOM.createRoot(document.getElementById("root"))
-console.log(heading)
-root.render(jsxHeading);
+const elem= <span>React element</span>
+const HeadingComponent=()=>(
+    <div id="container">
+     <h1 className="heading">Namaste react functional components</h1>
+     </div>
+);
+const title =(
+    <h1 className="head"tabIndex="5">
+        {elem}
+        Namaste react using jsx---
+        <HeadingComponent/>
+    </h1>
+    
+);
+// const jsxHeading=(<h1 className="head"
+//  tabIndex="1">
+//     Namaste react using jsx
+//     </h1>);
+// console.log(jsxHeading);
+// const root=ReactDOM.createRoot(document.getElementById("root"))
+// console.log(heading)
+// root.render(jsxHeading);
 //react components
 // class based components-old way
 // functional based components-new 
 
+//react functional component
+//they are just javascript function
+//some cool developer what they will do when there is single value of retur they remove the return from there file
+const fn=()=>true;//there is not a need to write them in curly braces also 
+//const fn2=()=>{
+ //   return true}//these both functions are same 
+ //dont write return if you want to be a proffesiol
+
+ //there is also difference between react element and react component
+ //root.render(HeadingComponent)//is it correct-wrong
+const root=ReactDOM.createRoot(document.getElementById("root"));
+root.render(title)//this is how you render react component
+
+//component composition :-this is called component composition
+//we can use normal javascript function instead of that arrow function
+//when u use function you have to use retuern in that 
+//in industry mostly we use arrow function 
+//suppose we have to put a element into a component then what we have to do ??
+
+//if you write curly braces inside jsx you can run any piece of javascript into it 
+//how can i put my react element inside it 
+//how can i put react element into an react element 
 
 
 
